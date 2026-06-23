@@ -1,32 +1,23 @@
 package org.firstinspires.ftc.teamcode.mechanisms;
 
-
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
-public class Drivetrain {
-    private DcMotor frontLeft;
+public class RightDrivetrain {
     private DcMotor frontRight;
-    private DcMotor backLeft;
     private DcMotor backRight;
 
     public void init(HardwareMap hwMap) {
-        frontLeft = hwMap.get(DcMotor.class, "front_left");
-        frontLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-
         frontRight = hwMap.get(DcMotor.class, "front_right");
         frontRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-
-       backLeft = hwMap.get(DcMotor.class, "back_left");
-        backLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         backRight = hwMap.get(DcMotor.class, "back_right");
         backRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
     }
 
-    public void setMotorSpeed(double leftSpeed, double rightSpeed) {
-        frontLeft.setPower(leftSpeed);
+    public void setMotorSpeed(double rightSpeed){
         frontRight.setPower(rightSpeed);
-        backLeft.setPower(leftSpeed);
         backRight.setPower(rightSpeed);
     }
+
+
 }
